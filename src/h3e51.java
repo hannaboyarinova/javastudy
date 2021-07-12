@@ -6,7 +6,7 @@ continue)
  */
 import java.util.Scanner;
 
-public class h3e5 {
+public class h3e51 {
 
     public static void main(String args[]) {
 
@@ -16,8 +16,6 @@ public class h3e5 {
         int currentNum1;
 
         do {
-            for (; ; ) {
-
                 System.out.print("Enter an integer: ");
                 enteredNum = sc.nextInt();
                 System.out.print("Thanks! And now, guess the number you entered");
@@ -33,10 +31,10 @@ public class h3e5 {
                         System.out.print("Not enough!");
                     }
                 } while (currentNum != enteredNum);
-                System.out.print("Do you wish to continue? (Enter any key to continue, 0 - to finish)");
-                currentNum1 = sc.nextInt();
-            }}
-            while (currentNum != 0) ;
+            System.out.print("Do you wish to continue? (Enter any key to continue, 0 - to finish)");
+            currentNum = sc.nextInt();
+        }
+        while (currentNum != 0) ;
 
     } // end of main
 }// end of class
