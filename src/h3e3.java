@@ -8,7 +8,9 @@ return? Вызов System.exit() ? Убедитесь в этом.
 import java.util.Scanner;
 public class h3e3 {
     public static void main(String[] args) {
+
         int i;
+
         Scanner sc1 = new Scanner(System.in);
         System.out.print("Enter start deposite sum: ");
         double s = sc1.nextDouble();

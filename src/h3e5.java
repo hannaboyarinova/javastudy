@@ -13,6 +13,7 @@ public class h3e5 {
         Scanner sc = new Scanner(System.in);
         int enteredNum;
         int currentNum;
+        int currentNum1;
 
         do {
             for (; ; ) {
@@ -33,9 +34,9 @@ public class h3e5 {
                     }
                 } while (currentNum != enteredNum);
                 System.out.print("Do you wish to continue? (Enter any key to continue, 0 - to finish)");
-                currentNum = sc.nextInt();
+                currentNum1 = sc.nextInt();
             }}
-            while (currentNum == 0) ;
+            while (currentNum != 0) ;
 
     } // end of main
 }// end of class RDN

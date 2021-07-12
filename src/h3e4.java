@@ -10,16 +10,11 @@
  */
 public class h3e4 {
     public static void main(String[] args) {
-
-        int i, j=0, a = 0;
-
-        for (i = 0; i <= 5; i++) {
-
-            for (j=i-1; j >= 0; j--) {
-                System.out.print(j + " ");
-                if (i == j) break;
+        int b=4;
+        for (int i = 0; i <= b; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(i - j + " ");
             }
-
             System.out.println();
         }
     }
