@@ -18,7 +18,7 @@ public class h3e51 {
         do {
                 System.out.print("Enter an integer: ");
                 enteredNum = sc.nextInt();
-                System.out.print("Thanks! And now, guess the number you entered");
+                System.out.print("Thanks! And now, guess the number you entered. ");
 
                 do {
                     System.out.print("Enter an integer: ");
@@ -26,12 +26,12 @@ public class h3e51 {
 
                     if (currentNum == enteredNum) {
                     } else if (currentNum > enteredNum) {
-                        System.out.print("Too much!");
+                        System.out.print("Too much! ");
                     } else if (currentNum < enteredNum) {
-                        System.out.print("Not enough!");
+                        System.out.print("Not enough! ");
                     }
                 } while (currentNum != enteredNum);
-            System.out.print("Do you wish to continue? (Enter any key to continue, 0 - to finish)");
+            System.out.print("Do you wish to continue? (Enter any digit to continue, 0 - to finish) ");
             currentNum = sc.nextInt();
         }
         while (currentNum != 0) ;
