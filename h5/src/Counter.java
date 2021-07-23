@@ -3,7 +3,7 @@ public class Counter {
     int min, max;
 
     Counter(){}
-    Counter(int min, int max){
+    Counter(int min, int max) {
         this.min = min;
         this.max = max;
     }
@@ -15,23 +15,24 @@ public class Counter {
         this.max = max;
         return max;
     }
-    void increaseCounter (){
-        if (this.min < this.max) this.min++;
+    void increaseCounter () {
+        if (min < max) min++;
             else resetCounter();
     }
-    void increaseCounter (int min, int max){
+    void increaseCounter (int min, int max) {
         this.min = min;
         this.max = max;
         if (min < max) min++;
             else resetCounter();
     }
     private int resetCounter() {
-        if (this.min>=this.max) this.min = 0;
-        return this.min;
+        if (min>=max) min = 0;
+        return min;
     }
 }
 class CounterTest {
     public static void main(String[] args) {
+
         Counter c2 = new Counter(1, 6);
 
         c2.setMin(8);
