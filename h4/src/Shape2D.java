@@ -1,19 +1,21 @@
-//import java.lang.Math;
-
 public abstract class Shape2D {
     public static final double PI = 3.14;
     abstract void getName();
     abstract double getSquare();
     abstract double getPerimeter();
-    abstract void getParallelTransfer();
+    abstract void getParallelTransfer(int a, int b);
 }
 class Dot extends Shape2D{
     int x, y;
-    Dot(){}
     Dot (int x, int y){
         this.x = x;
         this.y = y;
     }
+
+    public Dot() {
+
+    }
+
     @Override
     void getName() {
         System.out.println("This figure is dot");
@@ -27,12 +29,10 @@ class Dot extends Shape2D{
         return 0;
     }
     @Override
-    void getParallelTransfer() {
-        int x1 = 4, y1 = 8;
-        Dot d = new Dot(x, y);
-        d.x +=x1;
-        d.y+=y1;
-        System.out.println("After parallel transfer new coordinates of dot are {" + d.x + ";" + d.y + "}");
+    void getParallelTransfer(int x1, int y1) {
+        x+= x1;
+        y+= y1;
+        System.out.println("After parallel transfer new coordinates of dot are {" + x + ";" + y + "}");
     }
 }
 class Circle extends Shape2D{
@@ -53,7 +53,7 @@ class Circle extends Shape2D{
         System.out.println("This figure is circle");
     }
     @Override
-       void getParallelTransfer() {
+       void getParallelTransfer(int x1, int y1) {
     }
 }
 class Ellipse extends Shape2D{
@@ -75,13 +75,12 @@ class Ellipse extends Shape2D{
         System.out.println("This figure is ellipse");
     }
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class Line extends Shape2D {
     Dot d1 = new Dot();
     Dot d2 = new Dot();
-    int x1, x2, y1, y2;
     Line (int x1, int y1, int x2, int y2){
         d1.x = x1;
         d1.y = y1;
@@ -89,7 +88,7 @@ class Line extends Shape2D {
         d2.y = y2;
     }
     @Override
-        void getName(){
+    void getName(){
         System.out.println("This figure is line");
     }
     @Override
@@ -104,7 +103,7 @@ class Line extends Shape2D {
         System.out.println("The equation of line is " + (d1.y-d2.y) + "x + " + (d2.x-d1.x) + "y + " + (d1.x*d2.y - d2.x*d1.y));
     }
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class Polygonal extends Shape2D{
@@ -121,28 +120,29 @@ class Polygonal extends Shape2D{
         return 0;
     }
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class Square extends Shape2D{
+
     double a;
     Square (double a){
         this.a = a;
-        }
+    }
     @Override
     void getName(){
         System.out.println("This figure is square");
     }
     @Override
     double getSquare() {
-        return a*a;
+        return a * a;
     }
     @Override
     double getPerimeter() {
         return 4 * a;
     }
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class Rectangle extends Shape2D {
@@ -152,24 +152,20 @@ class Rectangle extends Shape2D {
         this.a = a;
         this.b = b;
     }
-
     @Override
     void getName() {
         System.out.println("This figure is rectangle");
     }
-
     @Override
     double getSquare() {
         return a * b;
     }
-
     @Override
     double getPerimeter() {
         return (a + b) * 2;
     }
-
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class Parallelogram extends Shape2D{
@@ -192,7 +188,7 @@ class Parallelogram extends Shape2D{
         return a * b * Math.sin(alpha);
     }
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class Trapezoid extends Shape2D{
@@ -215,7 +211,7 @@ class Trapezoid extends Shape2D{
         return 0;
     }
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class Rhombus extends Shape2D{
@@ -237,7 +233,7 @@ class Rhombus extends Shape2D{
         return 4 * a;
     }
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class RightTriangle extends Shape2D{
@@ -259,7 +255,7 @@ class RightTriangle extends Shape2D{
         return a + b + Math.sqrt(a * a + b * b);
     }
     @Override
-    void getParallelTransfer() {
+    void getParallelTransfer(int x1, int y1) {
     }
 }
 class Figuretest {
@@ -275,7 +271,7 @@ class Figuretest {
         e.getName();
 
         Dot d = new Dot(1, 1);
-        d.getParallelTransfer();
+        d.getParallelTransfer(2, 5);
         d.getName();
 
         Line l = new Line(1, 2, 3, 4);
